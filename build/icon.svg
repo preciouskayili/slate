@@ -1,0 +1,54 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024">
+  <!-- Slate app icon: a slate-grey tile holding a data grid, one selected cell in blue.
+       macOS layout: 824px tile inset 100px on a 1024 canvas. Regenerate assets: pnpm icons -->
+  <defs>
+    <linearGradient id="tile" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#3A3D44"/>
+      <stop offset="1" stop-color="#1C1E22"/>
+    </linearGradient>
+    <linearGradient id="sheen" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#fff" stop-opacity="0"/>
+      <stop offset="1" stop-color="#fff" stop-opacity=".07"/>
+    </linearGradient>
+    <linearGradient id="rim" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#fff" stop-opacity=".22"/>
+      <stop offset=".45" stop-color="#fff" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="ink" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#fff"/>
+      <stop offset="1" stop-color="#fff" stop-opacity=".82"/>
+    </linearGradient>
+    <linearGradient id="cell" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#5B97FF"/>
+      <stop offset="1" stop-color="#2F6BEB"/>
+    </linearGradient>
+    <filter id="drop" x="-20%" y="-20%" width="140%" height="150%">
+      <feDropShadow dx="0" dy="14" stdDeviation="16" flood-color="#000" flood-opacity=".3"/>
+    </filter>
+    <filter id="lift" x="-30%" y="-30%" width="160%" height="180%">
+      <feDropShadow dx="0" dy="8" stdDeviation="10" flood-color="#0b0c0e" flood-opacity=".35"/>
+    </filter>
+    <filter id="glow" x="-40%" y="-60%" width="180%" height="240%">
+      <feDropShadow dx="0" dy="10" stdDeviation="18" flood-color="#2F6BEB" flood-opacity=".55"/>
+    </filter>
+    <clipPath id="clip">
+      <rect x="100" y="100" width="824" height="824" rx="185"/>
+    </clipPath>
+  </defs>
+  <g filter="url(#drop)">
+    <rect x="100" y="100" width="824" height="824" rx="185" fill="url(#tile)"/>
+  </g>
+  <rect x="100" y="100" width="824" height="824" fill="url(#sheen)" clip-path="url(#clip)"/>
+  <rect x="104" y="104" width="816" height="816" rx="181" fill="none" stroke="url(#rim)" stroke-width="8"/>
+  <g filter="url(#lift)">
+    <!-- header row -->
+    <rect x="282" y="322" width="460" height="92" rx="34" fill="url(#ink)"/>
+    <!-- rows: key column + value column -->
+    <rect x="282" y="456" width="140" height="104" rx="32" fill="#fff" fill-opacity=".40"/>
+    <rect x="282" y="602" width="140" height="104" rx="32" fill="#fff" fill-opacity=".40"/>
+    <rect x="462" y="602" width="280" height="104" rx="32" fill="#fff" fill-opacity=".22"/>
+  </g>
+  <!-- the selected cell -->
+  <rect x="462" y="456" width="280" height="104" rx="32" fill="url(#cell)" filter="url(#glow)"/>
+  <rect x="463" y="457" width="278" height="102" rx="31" fill="none" stroke="#fff" stroke-opacity=".28" stroke-width="2"/>
+</svg>
